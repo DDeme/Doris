@@ -70,6 +70,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TetrisBlock.vb" />
     <Compile Include="multiplayer.Designer.vb">
       <DependentUpon>multiplayer.vb</DependentUpon>
     </Compile>
