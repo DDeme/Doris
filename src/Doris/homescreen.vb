@@ -51,6 +51,7 @@
 
 
 
+
     End Sub
 
 
@@ -98,7 +99,15 @@
 
 
 
-    
+    'Fade in
+    Public Sub fade_in()
+        For FadeIn = 0.0 To 1.1 Step 0.1
+            Me.Opacity = FadeIn
+            Me.Refresh()
+            Threading.Thread.Sleep(100)
+        Next
+    End Sub
   
+    
     
 End Class
