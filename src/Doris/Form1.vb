@@ -1,5 +1,14 @@
 ﻿Public Class Form1
 
+    
+
+
+
+
+
+
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -25,10 +34,10 @@
 
 
 
-        
+
     End Sub
 
-    
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
     End Sub
@@ -39,7 +48,7 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         ' are you sure to quit 
 
-        
+
         ' Now define a style for the message box. In this example, the 
         ' message box will have Yes and No buttons, the default will be 
         ' the No button, and a Critical Message icon will be present. 
@@ -53,11 +62,6 @@
         If response = MsgBoxResult.Yes Then
             End
         End If
-
-
-
-
-
 
     End Sub
 

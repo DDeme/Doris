@@ -50,21 +50,24 @@ Partial Class Form1
         '
         'Button2
         '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
         Me.Button2.Location = New System.Drawing.Point(26, 260)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(209, 72)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "MULTI PLAYER"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3
         '
+        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button3.Location = New System.Drawing.Point(26, 360)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(209, 72)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "EXIT GAME"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Form1
         '
