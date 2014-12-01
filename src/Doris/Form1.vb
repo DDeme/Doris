@@ -39,8 +39,26 @@
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         ' are you sure to quit 
 
+        
+        ' Now define a style for the message box. In this example, the 
+        ' message box will have Yes and No buttons, the default will be 
+        ' the No button, and a Critical Message icon will be present. 
+        Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or _
+                    MsgBoxStyle.MsgBoxSetForeground
 
-        End
+        ' Display the message box and save the response, Yes or No. 
+        Dim response = MsgBox("Are you sure to quit ?", style, "")
+
+        ' Take some action based on the response. 
+        If response = MsgBoxResult.Yes Then
+            End
+        End If
+
+
+
+
+
+
     End Sub
 
 

@@ -33,7 +33,7 @@ Partial Class Form1
         '
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo
         Me.PictureBox1.InitialImage = Global.WindowsApplication1.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 23)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(503, 89)
         Me.PictureBox1.TabIndex = 0
