@@ -1,221 +1,246 @@
 ﻿Option Strict On
-Imports MyGames.Tetris
-Imports MyGames.Tetris.TetrisBlock
 
-Partial Class TetrisGame
-    Private GameBoard As TetrisBoard
-    Private FallingBlock As TetrisBlock
-    Private PreviewBoard As TetrisBoard
-    Private PreviewBlock As TetrisBlock
+Namespace Tetris
+    Public Class TetrisBlock
+        Private ParentBoard As TetrisBoard
 
-    Private Score As Double
-    Private Level As Integer
-    Private Speed As Integer
-    Private Lines As Integer
+#Region "Enumerations"
+        Public Enum MoveDirection
+            Left
+            Right
+            Down
+        End Enum
 
-    Private RandomNumbers As New Random
-    Private Status As GameStatus = GameStatus.Stopped
+        Public Enum Shapes
+            I1 = 1
+            I2
+            I3
+            I4
+            J1
+            J2
+            J3
+            J4
+            L1
+            L2
+            L3
+            L4
+            O1
+            O2
+            O3
+            O4
+            S1
+            S2
+            S3
+            S4
+            T1
+            T2
+            T3
+            T4
+            Z1
+            Z2
+            Z3
+            Z4
+        End Enum
+#End Region
 
-    Private Enum GameStatus
-        Running
-        Paused
-        Stopped
-    End Enum
+#Region "Public Properties"
+        Private _Cells() As TetrisCell
+        Public Property Cells() As TetrisCell()
+            Get
+                Return _Cells
+            End Get
+            Set(ByVal value As TetrisCell())
+                _Cells = value
+            End Set
+        End Property
 
-#Region "Event Handlers"
-    Private Sub TetrisGame_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        PreviewBoard = New TetrisBoard(PreviewBox)
-        With PreviewBoard
-            .Rows = 4
-            .Columns = 4
-            .CellSize = New Size(20, 20)
-            .Style = BorderStyle.FixedSingle
-            .SetupBoard()
-        End With
-        PreviewBlock = New TetrisBlock(PreviewBoard)
-        PreviewBlock.CenterCell = PreviewBoard.Cells(2, 2)
-        PreviewBlock.Shape = GetRandomShape()
+        Private _CenterCell As TetrisCell
+        Public Property CenterCell() As TetrisCell
+            Get
+                Return _CenterCell
+            End Get
+            Set(ByVal value As TetrisCell)
+                _CenterCell = value
+            End Set
+        End Property
 
-        GameBoard = New TetrisBoard(GameBox)
-        With GameBoard
-            .Rows = 20
-            .Columns = 10
-            .CellSize = New Size(20, 20)
-            .Style = BorderStyle.FixedSingle
-            .SetupBoard()
-        End With
-        FallingBlock = New TetrisBlock(GameBoard)
+        Private _Shape As Shapes
+        Public Property Shape() As Shapes
+            Get
+                Return _Shape
+            End Get
+            Set(ByVal value As Shapes)
+                _Shape = value
+                UpdateShape()
+            End Set
+        End Property
+#End Region
 
-        HelpLabel.Text = HelpLabel.Text.Replace("|", vbCrLf)
-        StylesLabel.Text = StylesLabel.Text.Replace("|", vbCrLf)
-        ShowMessage(String.Format("{0}W E L C O M E{0}{0}T O{0}{0}T E T R I S{0}{0}{0}{0}Click here to start new game", vbCrLf))
+#Region "Public Methods"
+        Public Sub New(ByVal parentBoard As TetrisBoard)
+            Me.ParentBoard = parentBoard
+        End Sub
 
-    End Sub
+        Public Function CanMove(ByVal direction As MoveDirection) As Boolean
+            Dim newCenterCell As TetrisCell = Nothing
+            Select Case direction
+                Case MoveDirection.Left
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row, CenterCell.Column - 1)
+                Case MoveDirection.Right
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row, CenterCell.Column + 1)
+                Case MoveDirection.Down
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row + 1, CenterCell.Column)
+            End Select
+            Return CanMove(newCenterCell)
+        End Function
 
-    Private Sub TetrisGame_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
-        Select Case e.KeyCode
-            Case Keys.Left, Keys.Right, Keys.Down, Keys.Up
-                If Status = GameStatus.Running Then
-                    With FallingBlock
-                        Select Case e.KeyCode
-                            Case Keys.Left
-                                If .CanMove(MoveDirection.Left) Then .Move(MoveDirection.Left)
-                            Case Keys.Right
-                                If .CanMove(MoveDirection.Right) Then .Move(MoveDirection.Right)
-                            Case Keys.Down
-                                If .CanMove(MoveDirection.Down) Then .Move(MoveDirection.Down)
-                            Case Keys.Up
-                                If .CanRotate Then .Rotate()
-                        End Select
-                    End With
-                End If
-            Case Keys.P
-                If Status <> GameStatus.Stopped Then TogglePauseGame()
-            Case Keys.N
-                If Status = GameStatus.Stopped Then
-                    StartNewGame()
-                ElseIf DialogResult.Yes = MessageBox.Show("Abort current game?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
-                    StartNewGame()
-                End If
-            Case Keys.B
-                GameBoard.Style = BorderStyle.FixedSingle
-                PreviewBoard.Style = BorderStyle.FixedSingle
-                GameBoard.Color = Color.Empty
-                PreviewBoard.Color = Color.Empty
-            Case Keys.M
-                GameBoard.Style = BorderStyle.None
-                PreviewBoard.Style = BorderStyle.None
-                GameBoard.Color = Color.Empty
-                PreviewBoard.Color = Color.Empty
-            Case Keys.F
-                GameBoard.Style = BorderStyle.None
-                PreviewBoard.Style = BorderStyle.None
-                GameBoard.Color = Color.Orange
-                PreviewBoard.Color = Color.Orange
-            Case Keys.S
-                GameBoard.Style = BorderStyle.None
-                PreviewBoard.Style = BorderStyle.None
-                GameBoard.Color = Color.SkyBlue
-                PreviewBoard.Color = Color.SkyBlue
-            Case Keys.W
-                GameBoard.Style = BorderStyle.None
-                PreviewBoard.Style = BorderStyle.None
-                GameBoard.Color = Color.Blue
-                PreviewBoard.Color = Color.Blue
-            Case Keys.C
-                GameBoard.Style = BorderStyle.None
-                PreviewBoard.Style = BorderStyle.None
-                GameBoard.Color = Color.Chocolate
-                PreviewBoard.Color = Color.Chocolate
-        End Select
-    End Sub
-
-    Private Sub MessageLabel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MessageLabel.Click
-        Select Case Status
-            Case GameStatus.Stopped
-                StartNewGame()
-            Case GameStatus.Paused
-                TogglePauseGame()
-        End Select
-    End Sub
-
-    Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
-        If FallingBlock.CanMove(MoveDirection.Down) Then
-            FallingBlock.Move(MoveDirection.Down)
-        Else
-            '' Fix block to base
-            For Each cell As TetrisCell In FallingBlock.Cells
-                cell.IsEmpty = False
+        Public Function CanMove(ByVal targetPosition As TetrisCell) As Boolean
+            If targetPosition Is Nothing Then Return False
+            For Each cell In GetShapeCells(Shape, targetPosition)
+                If cell Is Nothing OrElse Not cell.IsEmpty Then Return False
             Next
+            Return True
+        End Function
 
-            '' Remove completed rows
-            Dim checkRows = From cell In FallingBlock.Cells _
-                            Order By cell.Row _
-                            Select cell.Row Distinct
-            Dim rowsRemoved As Integer = 0
-            For Each row In checkRows
-                If GameBoard.IsRowComplete(row) Then
-                    GameBoard.RemoveRow(row)
-                    rowsRemoved += 1
-                End If
+        Public Sub Move(ByVal direction As MoveDirection, Optional ByVal moveUnits As Integer = 1)
+            Dim newCenterCell As TetrisCell = Nothing
+            Select Case direction
+                Case MoveDirection.Left
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row, CenterCell.Column - moveUnits)
+                Case MoveDirection.Right
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row, CenterCell.Column + moveUnits)
+                Case MoveDirection.Down
+                    newCenterCell = ParentBoard.Cells(CenterCell.Row + moveUnits, CenterCell.Column)
+            End Select
+            Move(newCenterCell)
+        End Sub
+
+        Public Sub Move(ByVal targetPosition As TetrisCell, Optional ByVal moveUnits As Integer = 1)
+            CenterCell = targetPosition
+            RefreshBackGround()
+            UpdateShape()
+        End Sub
+
+        Public Function CanRotate() As Boolean
+            Dim nextShape As Shapes = GetRotatedShape()
+            For Each cell In GetShapeCells(nextShape, CenterCell)
+                If cell Is Nothing OrElse Not cell.IsEmpty Then Return False
             Next
+            Return True
+        End Function
 
-            '' Update Statistics
-            Score += Math.Pow(rowsRemoved, 2) * 100
-            Lines += rowsRemoved
-            Speed = 1 + Lines \ 10
-            If Speed Mod 10 = 0 Then Level += 1 : Speed = 1
-            Timer1.Interval = (10 - Speed) * 100
-            UpdateStatistics()
+        Public Sub Rotate()
+            RefreshBackGround()
+            Shape = GetRotatedShape()
+        End Sub
 
-            '' Make the next block fall
-            DropNextFallingBlock()
+        Public Sub Refresh()
+            Dim shapeColor As Color = GetShapeColor(Shape)
+            For Each cell In Cells
+                cell.HighlightColor = shapeColor
+                cell.Highlighted = True
+            Next
+        End Sub
 
-            '' Check if game has ended
-            If Not FallingBlock.CanMove(FallingBlock.CenterCell) Then EndGame()
-        End If
-    End Sub
+        Public Sub RefreshBackGround()
+            Dim cellToClear As TetrisCell
+            For i = -3 To 3
+                For j = -3 To 3
+                    cellToClear = ParentBoard.Cells(CenterCell.Row + i, CenterCell.Column + j)
+                    If cellToClear IsNot Nothing Then cellToClear.Refresh()
+                Next
+            Next
+        End Sub
 #End Region
 
 #Region "Private Methods"
-    Private Function GetRandomShape() As TetrisBlock.Shapes
-        Dim number As Integer = RandomNumbers.Next(Shapes.I1, Shapes.Z4 + 1) 'first to last
-        Return CType(number, TetrisBlock.Shapes)
-    End Function
+        Private Sub UpdateShape()
+            Cells = GetShapeCells(Shape, CenterCell)
+            Refresh()
+        End Sub
 
-    Private Sub DropNextFallingBlock()
-        FallingBlock.CenterCell = GameBoard.Cells(2, GameBoard.Columns \ 2)
-        FallingBlock.Shape = PreviewBlock.Shape
-        PreviewBlock.Shape = GetRandomShape()
-        PreviewBlock.RefreshBackGround()
-        PreviewBlock.Refresh()
-    End Sub
+        Private Function GetRotatedShape() As Shapes
+            Dim rotatedShape As Integer = If(Shape Mod 4 = 0, Shape - 3, Shape + 1)
+            Return CType(rotatedShape, Shapes)
+        End Function
 
-    Private Sub StartNewGame()
-        Score = 0
-        Lines = 0
-        Speed = 1
-        Level = 1
-        Timer1.Interval = 1000
-        UpdateStatistics()
+        Private Function GetShapeCells(ByVal theShape As Shapes, ByVal referenceCell As TetrisCell) As TetrisCell()
+            Dim theCells() As TetrisCell
+            Select Case theShape
+                Case Shapes.I1, Shapes.I3
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 1, 0, 2, 0)
+                Case Shapes.I2, Shapes.I4
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, 0, 1, 0, 2)
+                Case Shapes.J1
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 1, 0, 1, -1)
+                Case Shapes.J2
+                    theCells = GetCells(referenceCell, 0, 1, 0, 0, 0, -1, -1, -1)
+                Case Shapes.J3
+                    theCells = GetCells(referenceCell, 1, 0, 0, 0, -1, 0, -1, 1)
+                Case Shapes.J4
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, 0, 1, 1, 1)
+                Case Shapes.L1
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 1, 0, 1, 1)
+                Case Shapes.L2
+                    theCells = GetCells(referenceCell, 0, 1, 0, 0, 0, -1, 1, -1)
+                Case Shapes.L3
+                    theCells = GetCells(referenceCell, 1, 0, 0, 0, -1, 0, -1, -1)
+                Case Shapes.L4
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, 0, 1, -1, 1)
+                Case Shapes.O1, Shapes.O2, Shapes.O3, Shapes.O4
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 0, -1, -1, -1)
+                Case Shapes.S1, Shapes.S3
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, -1, 0, -1, 1)
+                Case Shapes.S2, Shapes.S4
+                    theCells = GetCells(referenceCell, 1, 0, 0, 0, 0, -1, -1, -1)
+                Case Shapes.T1
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, 0, 1, 1, 0)
+                Case Shapes.T2
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 1, 0, 0, -1)
+                Case Shapes.T3
+                    theCells = GetCells(referenceCell, 0, 1, 0, 0, 0, -1, -1, 0)
+                Case Shapes.T4
+                    theCells = GetCells(referenceCell, 1, 0, 0, 0, -1, 0, 0, 1)
+                Case Shapes.Z1, Shapes.Z3
+                    theCells = GetCells(referenceCell, 0, -1, 0, 0, 1, 0, 1, 1)
+                Case Shapes.Z2, Shapes.Z4
+                    theCells = GetCells(referenceCell, -1, 0, 0, 0, 0, -1, 1, -1)
+                Case Else
+                    theCells = Nothing
+            End Select
+            Return theCells
+        End Function
 
-        GameBoard.SetupBoard()
-        'PreviewBlock.Shape = GetRandomShape()
-        DropNextFallingBlock()
-        MessageLabel.Visible = False
-        Timer1.Enabled = True
-        Status = GameStatus.Running
-    End Sub
+        Private Function GetCells(ByVal referenceCell As TetrisCell, ByVal ParamArray relativeCoordinates() As Integer) As TetrisCell()
+            Dim theCells((relativeCoordinates.Count \ 2) - 1) As TetrisCell
+            Dim refRow As Integer = referenceCell.Row
+            Dim refCol As Integer = referenceCell.Column
+            For i As Integer = 0 To theCells.Count - 1
+                theCells(i) = ParentBoard.Cells(refRow + relativeCoordinates(i * 2), refCol + relativeCoordinates(i * 2 + 1))
+            Next
+            Return theCells
+        End Function
 
-    Private Sub EndGame()
-        Timer1.Enabled = False
-        Status = GameStatus.Stopped
-        ShowMessage(String.Format("{0}{0}GAME OVER{0}{0}{0}{0}Click here to start new game", vbCrLf))
-    End Sub
-
-    Private Sub UpdateStatistics()
-        ScoreLabel.Text = Score.ToString("000")
-        LinesLabel.Text = Lines.ToString
-        LevelLabel.Text = Level.ToString
-        SpeedLabel.Text = Speed.ToString
-    End Sub
-
-    Private Sub TogglePauseGame()
-        If Status = GameStatus.Paused Then
-            Status = GameStatus.Running
-            MessageLabel.Visible = False
-            Timer1.Enabled = True
-        Else
-            Status = GameStatus.Paused
-            ShowMessage(String.Format("{0}{0}GAME PAUSED{0}{0}{0}{0}Click here to resume.", vbCrLf))
-        End If
-    End Sub
-
-    Private Sub ShowMessage(ByVal message As String)
-        MessageLabel.Text = message
-        MessageLabel.Visible = True
-        Timer1.Enabled = False
-    End Sub
+        Private Function GetShapeColor(ByVal theShape As Shapes) As Color
+            If ParentBoard.Color <> Color.Empty Then Return ParentBoard.Color
+            Select Case theShape
+                Case Shapes.I1 To Shapes.I4
+                    Return Color.Green
+                Case Shapes.J1 To Shapes.J4
+                    Return Color.Orange
+                Case Shapes.L1 To Shapes.L4
+                    Return Color.Brown
+                Case Shapes.O1 To Shapes.O4
+                    Return Color.Red
+                Case Shapes.S1 To Shapes.S4
+                    Return Color.Cyan
+                Case Shapes.T1 To Shapes.T4
+                    Return Color.Blue
+                Case Shapes.Z1 To Shapes.Z4
+                    Return Color.Aqua
+            End Select
+        End Function
 #End Region
 
-End Class
+    End Class
+End Namespace

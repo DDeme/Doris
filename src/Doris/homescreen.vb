@@ -1,5 +1,28 @@
 ﻿Public Class homescreen
 
+    'Inherits Windows.Forms.Form
+
+    'Private Sub DrawformGradient(ByVal TopColor As Color, ByVal BottomColor As Color)
+
+    '    Dim objBrush As New Drawing2D.LinearGradientBrush(Me.DisplayRectangle, TopColor, BottomColor, Drawing2D.LinearGradientMode.Vertical)
+
+    '    Dim objGraphics As Graphics = Me.CreateGraphics()
+
+    '    objGraphics.FillRectangle(objBrush, Me.DisplayRectangle)
+    '    objBrush.Dispose()
+
+    '    objGraphics.Dispose()
+
+    'End Sub
+
+    'Private Sub homescreen_Paint(sender As Object, e As PaintEventArgs) Handles MyBase.Paint
+    '    DrawformGradient(Color.FromArgb(221, 94, 137), Color.FromArgb(247, 187, 151))
+
+    'End Sub
+
+
+
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -10,7 +33,7 @@
         Me.Visible = False
 
 
-        Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        'Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         Me.WindowState = FormWindowState.Maximized
 
 
@@ -34,7 +57,8 @@
     ' open singleplayer 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
-        Dim newWindow As New singleplayer()
+        Dim newWindow As New TetrisGame()
+        'Dim newWindow As New singleplayer()
         newWindow.ShowDialog()
     End Sub
 
@@ -73,4 +97,8 @@
 
 
 
+
+    
+  
+    
 End Class
