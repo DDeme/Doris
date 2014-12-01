@@ -1,5 +1,5 @@
 ﻿Option Strict On
-
+'zakomentovať funkcionalitu 
 Namespace Tetris
     Public Class TetrisBlock
         Private ParentBoard As TetrisBoard
