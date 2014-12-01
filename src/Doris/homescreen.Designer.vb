@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class homescreen
     Inherits System.Windows.Forms.Form
 
     'Formulář přepisuje metodu Dispose, aby vyčistil seznam součástí.
@@ -22,22 +22,12 @@ Partial Class Form1
     'Neupravovat pomocí editoru kódu.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo
-        Me.PictureBox1.InitialImage = Global.WindowsApplication1.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(26, 23)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(503, 89)
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
         '
         'Button1
         '
@@ -60,7 +50,7 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.Color.White
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button3.Location = New System.Drawing.Point(26, 360)
         Me.Button3.Name = "Button3"
@@ -68,6 +58,16 @@ Partial Class Form1
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "EXIT GAME"
         Me.Button3.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo
+        Me.PictureBox1.InitialImage = Global.WindowsApplication1.My.Resources.Resources.logo
+        Me.PictureBox1.Location = New System.Drawing.Point(26, 23)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(503, 89)
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Form1
         '

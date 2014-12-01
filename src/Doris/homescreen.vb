@@ -1,11 +1,4 @@
-﻿Public Class Form1
-
-    
-
-
-
-
-
+﻿Public Class homescreen
 
 
 
@@ -21,11 +14,11 @@
         Me.WindowState = FormWindowState.Maximized
 
 
-        ' Dim s = New SplashScreen1()
-        's.Show()
+        Dim s = New SplashScreen1()
+        s.Show()
         'Do processing here or thread.sleep to illustrate the concept
-        'System.Threading.Thread.Sleep(5000)
-        's.Close()
+        System.Threading.Thread.Sleep(3000)
+        s.Close()
 
         Me.Visible = True
 
@@ -38,7 +31,20 @@
     End Sub
 
 
+    ' open singleplayer 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Visible = False
+        Dim newWindow As New singleplayer()
+        newWindow.ShowDialog()
+    End Sub
+
+
+
+    ' open multiplayer
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Visible = False
+        Dim newWindow As New multiplayer()
+        newWindow.ShowDialog()
 
     End Sub
 
@@ -64,6 +70,7 @@
         End If
 
     End Sub
+
 
 
 End Class
