@@ -225,19 +225,19 @@ Namespace Tetris
             If ParentBoard.Color <> Color.Empty Then Return ParentBoard.Color
             Select Case theShape
                 Case Shapes.I1 To Shapes.I4
-                    Return Color.Green
+                    Return Color.FromArgb(46, 204, 113)
                 Case Shapes.J1 To Shapes.J4
-                    Return Color.Orange
+                    Return Color.FromArgb(230, 126, 34)
                 Case Shapes.L1 To Shapes.L4
-                    Return Color.Brown
+                    Return Color.FromArgb(150, 40, 27)
                 Case Shapes.O1 To Shapes.O4
-                    Return Color.Red
+                    Return Color.FromArgb(192, 57, 43)
                 Case Shapes.S1 To Shapes.S4
-                    Return Color.Cyan
+                    Return Color.FromArgb(26, 188, 156)
                 Case Shapes.T1 To Shapes.T4
-                    Return Color.Blue
+                    Return Color.FromArgb(52, 152, 219)
                 Case Shapes.Z1 To Shapes.Z4
-                    Return Color.Aqua
+                    Return Color.FromArgb(75, 119, 190)
             End Select
         End Function
 #End Region

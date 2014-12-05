@@ -158,7 +158,7 @@ Partial Class TetrisGame
         '
         'GameBox
         '
-        Me.GameBox.BackColor = System.Drawing.Color.Transparent
+        Me.GameBox.BackColor = System.Drawing.Color.White
         Me.GameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.GameBox.Location = New System.Drawing.Point(222, 62)
         Me.GameBox.Name = "GameBox"
@@ -224,6 +224,7 @@ Partial Class TetrisGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(883, 611)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.StylesLabel)
