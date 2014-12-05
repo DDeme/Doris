@@ -36,12 +36,16 @@ Partial Class homescreen
         '
         'Button2
         '
-        Me.Button2.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.FlatAppearance.BorderSize = 5
+        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(177, 225)
+        Me.Button2.Location = New System.Drawing.Point(177, 257)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(183, 34)
+        Me.Button2.Size = New System.Drawing.Size(205, 60)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "MULTI PLAYER"
         Me.Button2.UseVisualStyleBackColor = False
@@ -57,7 +61,7 @@ Partial Class homescreen
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(177, 134)
+        Me.Button1.Location = New System.Drawing.Point(177, 181)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(205, 60)
         Me.Button1.TabIndex = 1
@@ -66,13 +70,17 @@ Partial Class homescreen
         '
         'Button3
         '
-        Me.Button3.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.FlatAppearance.BorderSize = 5
+        Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(177, 276)
+        Me.Button3.Location = New System.Drawing.Point(177, 332)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(183, 72)
+        Me.Button3.Size = New System.Drawing.Size(205, 60)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "EXIT GAME"
         Me.Button3.UseVisualStyleBackColor = False
@@ -101,7 +109,7 @@ Partial Class homescreen
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Location = New System.Drawing.Point(182, 52)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(549, 378)
+        Me.Panel1.Size = New System.Drawing.Size(549, 405)
         Me.Panel1.TabIndex = 5
         '
         'homescreen
