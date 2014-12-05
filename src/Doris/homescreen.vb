@@ -24,7 +24,7 @@
 
 
 
-
+    'načítanie formulára s úvodnou obrazovkou 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -33,29 +33,34 @@
         Me.Visible = False
 
 
-        'Me.FormBorderStyle = Windows.Forms.FormBorderStyle.None
-        Me.WindowState = FormWindowState.Maximized
 
+
+
+        
 
         Dim s = New SplashScreen1()
         s.Show()
+
+        Me.WindowState = FormWindowState.Maximized
+        align(Panel1)
+
         'Do processing here or thread.sleep to illustrate the concept
         System.Threading.Thread.Sleep(3000)
         s.Close()
 
+
+
+
+
+
         Me.Visible = True
-
-
-
-
-
-
 
 
     End Sub
 
 
-    ' open singleplayer 
+
+    ' otvára single player htu 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
         Dim newWindow As New TetrisGame()
@@ -65,7 +70,7 @@
 
 
 
-    ' open multiplayer
+    ' otvára multiplayer hru 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Visible = False
         Dim newWindow As New multiplayer()
@@ -75,7 +80,7 @@
 
 
 
-    ' exit tlacidlo 
+    ' tlacidlo ukoncenia hry 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         ' are you sure to quit 
 
@@ -107,7 +112,18 @@
             Threading.Thread.Sleep(100)
         Next
     End Sub
-  
-    
-    
+
+    'zarovnáva elemnt do stredu obrazovky 
+    Public Function align(element As Object)
+        Dim scrwidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        Dim scrheight As Integer = Screen.PrimaryScreen.Bounds.Height
+
+
+        element.location = New Point((scrwidth - element.Width) / 2, (scrheight - element.Height) / 2)
+
+    End Function
+
+
+
+
 End Class
