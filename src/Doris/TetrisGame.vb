@@ -1,16 +1,6 @@
 ﻿Option Strict On
-
-
-
-
-
-
 Imports WindowsApplication1.Tetris
-
 Imports WindowsApplication1.Tetris.TetrisBlock
-
-
-
 
 Partial Class TetrisGame
     Private GameBoard As TetrisBoard
@@ -34,9 +24,6 @@ Partial Class TetrisGame
 
 #Region "Event Handlers"
     Private Sub TetrisGame_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        Me.BackColor = Color.FromArgb(52, 73, 94)
-
         PreviewBoard = New TetrisBoard(PreviewBox)
         With PreviewBoard
             .Rows = 4
@@ -56,8 +43,6 @@ Partial Class TetrisGame
             .CellSize = New Size(20, 20)
             .Style = BorderStyle.FixedSingle
             .SetupBoard()
-            '.Color = Color.White
-
         End With
         FallingBlock = New TetrisBlock(GameBoard)
 
@@ -69,12 +54,9 @@ Partial Class TetrisGame
 
     Private Sub TetrisGame_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
-            Case Keys.Left, Keys.Right, Keys.Down, Keys.Up, Keys.Space
-
+            Case Keys.Left, Keys.Right, Keys.Down, Keys.Up
                 If Status = GameStatus.Running Then
                     With FallingBlock
-
-                        'dorobiť priame padanie kociek 
                         Select Case e.KeyCode
                             Case Keys.Left
                                 If .CanMove(MoveDirection.Left) Then .Move(MoveDirection.Left)
@@ -84,13 +66,6 @@ Partial Class TetrisGame
                                 If .CanMove(MoveDirection.Down) Then .Move(MoveDirection.Down)
                             Case Keys.Up
                                 If .CanRotate Then .Rotate()
-                            Case Keys.Space
-
-                                While .CanMove(MoveDirection.Down) = True
-
-                                    .Move(MoveDirection.Down)
-                                End While
-
                         End Select
                     End With
                 End If
@@ -102,32 +77,9 @@ Partial Class TetrisGame
                 ElseIf DialogResult.Yes = MessageBox.Show("Abort current game?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) Then
                     StartNewGame()
                 End If
-
-            Case Keys.Escape
-
-                If Status <> GameStatus.Stopped Then TogglePauseGame()
-
-                Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or _
-                    MsgBoxStyle.MsgBoxSetForeground
-
-                ' Display the message box and save the response, Yes or No. 
-                Dim response = MsgBox("Are you sure to return to main menu ?", style, "")
-
-                ' Take some action based on the response. 
-                If response = MsgBoxResult.Yes Then
-                    Me.Close()
-                    homescreen.Show()
-                Else
-                    TogglePauseGame()
-
-                End If
-
-
             Case Keys.B
                 GameBoard.Style = BorderStyle.FixedSingle
-                PreviewBoard.Style = BorderStyle.Fixed3D
-
-
+                PreviewBoard.Style = BorderStyle.FixedSingle
                 GameBoard.Color = Color.Empty
                 PreviewBoard.Color = Color.Empty
             Case Keys.M
@@ -266,6 +218,4 @@ Partial Class TetrisGame
     End Sub
 #End Region
 
-    
-    
 End Class

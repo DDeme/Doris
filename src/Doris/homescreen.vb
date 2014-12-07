@@ -1,4 +1,9 @@
-﻿Public Class homescreen
+﻿
+Imports WindowsApplication1.Doris
+
+
+Public Class homescreen
+
 
     'Inherits Windows.Forms.Form
 
@@ -34,20 +39,8 @@
 
 
 
-
-
-        
-
-        Dim s = New SplashScreen1()
-        s.Show()
-
         Me.WindowState = FormWindowState.Maximized
         align(Panel1)
-
-        'Do processing here or thread.sleep to illustrate the concept
-        System.Threading.Thread.Sleep(3000)
-        s.Close()
-
 
 
 
@@ -63,8 +56,8 @@
     ' otvára single player htu 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
-        Dim newWindow As New TetrisGame()
         'Dim newWindow As New singleplayer()
+        Dim newWindow As New TetrisGame()
         newWindow.ShowDialog()
     End Sub
 

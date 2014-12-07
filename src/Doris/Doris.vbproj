@@ -99,6 +99,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="doris.vb" />
     <Compile Include="multiplayer.Designer.vb">
       <DependentUpon>multiplayer.vb</DependentUpon>
     </Compile>
@@ -127,24 +128,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Resources\SplashScreen1.Designer.vb">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\SplashScreen1.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="singleplayer.Designer.vb">
-      <DependentUpon>singleplayer.vb</DependentUpon>
-    </Compile>
-    <Compile Include="singleplayer.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="TetrisBlock.vb" />
     <Compile Include="TetrisBoard.vb" />
     <Compile Include="TetrisCell.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="TetrisGame.designer.vb">
+    <Compile Include="TetrisGame.Designer.vb">
       <DependentUpon>TetrisGame.vb</DependentUpon>
     </Compile>
     <Compile Include="TetrisGame.vb">
@@ -163,12 +152,6 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="singleplayer.resx">
-      <DependentUpon>singleplayer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TetrisGame.resx">
       <DependentUpon>TetrisGame.vb</DependentUpon>
