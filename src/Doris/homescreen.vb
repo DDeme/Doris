@@ -1,5 +1,6 @@
 ﻿
-Imports WindowsApplication1.Doris
+Imports WindowsApplication1.main
+Imports WindowsApplication1.main.doris
 
 
 Public Class homescreen
@@ -107,14 +108,14 @@ Public Class homescreen
     End Sub
 
     'zarovnáva elemnt do stredu obrazovky 
-    Public Function align(element As Object)
+    Public Sub align(element As Object)
         Dim scrwidth As Integer = Screen.PrimaryScreen.Bounds.Width
         Dim scrheight As Integer = Screen.PrimaryScreen.Bounds.Height
 
 
         element.location = New Point((scrwidth - element.Width) / 2, (scrheight - element.Height) / 2)
 
-    End Function
+    End Sub
 
 
 

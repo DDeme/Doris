@@ -40,14 +40,17 @@ Partial Class TetrisGame
         Me.StylesLabel = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.GameBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PreviewBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'HelpLabel
         '
         Me.HelpLabel.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HelpLabel.Location = New System.Drawing.Point(220, 241)
+        Me.HelpLabel.ForeColor = System.Drawing.Color.White
+        Me.HelpLabel.Location = New System.Drawing.Point(269, 272)
         Me.HelpLabel.Name = "HelpLabel"
         Me.HelpLabel.Size = New System.Drawing.Size(200, 65)
         Me.HelpLabel.TabIndex = 28
@@ -58,7 +61,8 @@ Partial Class TetrisGame
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(220, 221)
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(269, 252)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(46, 16)
         Me.Label2.TabIndex = 27
@@ -67,8 +71,8 @@ Partial Class TetrisGame
         'LinesLabel
         '
         Me.LinesLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinesLabel.ForeColor = System.Drawing.Color.DarkRed
-        Me.LinesLabel.Location = New System.Drawing.Point(354, 144)
+        Me.LinesLabel.ForeColor = System.Drawing.Color.White
+        Me.LinesLabel.Location = New System.Drawing.Point(403, 175)
         Me.LinesLabel.Name = "LinesLabel"
         Me.LinesLabel.Size = New System.Drawing.Size(33, 16)
         Me.LinesLabel.TabIndex = 25
@@ -79,7 +83,8 @@ Partial Class TetrisGame
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(342, 122)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(391, 153)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(45, 16)
         Me.Label5.TabIndex = 24
@@ -89,8 +94,8 @@ Partial Class TetrisGame
         'SpeedLabel
         '
         Me.SpeedLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SpeedLabel.ForeColor = System.Drawing.Color.DarkRed
-        Me.SpeedLabel.Location = New System.Drawing.Point(290, 144)
+        Me.SpeedLabel.ForeColor = System.Drawing.Color.White
+        Me.SpeedLabel.Location = New System.Drawing.Point(339, 175)
         Me.SpeedLabel.Name = "SpeedLabel"
         Me.SpeedLabel.Size = New System.Drawing.Size(33, 16)
         Me.SpeedLabel.TabIndex = 23
@@ -101,7 +106,8 @@ Partial Class TetrisGame
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(277, 122)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(326, 153)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(54, 16)
         Me.Label4.TabIndex = 22
@@ -111,8 +117,8 @@ Partial Class TetrisGame
         'ScoreLabel
         '
         Me.ScoreLabel.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ScoreLabel.ForeColor = System.Drawing.Color.Red
-        Me.ScoreLabel.Location = New System.Drawing.Point(305, 29)
+        Me.ScoreLabel.ForeColor = System.Drawing.Color.White
+        Me.ScoreLabel.Location = New System.Drawing.Point(354, 60)
         Me.ScoreLabel.Name = "ScoreLabel"
         Me.ScoreLabel.Size = New System.Drawing.Size(104, 26)
         Me.ScoreLabel.TabIndex = 21
@@ -127,7 +133,8 @@ Partial Class TetrisGame
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(315, 13)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(364, 44)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(85, 16)
         Me.Label3.TabIndex = 20
@@ -137,8 +144,8 @@ Partial Class TetrisGame
         'LevelLabel
         '
         Me.LevelLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LevelLabel.ForeColor = System.Drawing.Color.DarkRed
-        Me.LevelLabel.Location = New System.Drawing.Point(226, 144)
+        Me.LevelLabel.ForeColor = System.Drawing.Color.White
+        Me.LevelLabel.Location = New System.Drawing.Point(275, 175)
         Me.LevelLabel.Name = "LevelLabel"
         Me.LevelLabel.Size = New System.Drawing.Size(33, 16)
         Me.LevelLabel.TabIndex = 19
@@ -149,7 +156,8 @@ Partial Class TetrisGame
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(220, 122)
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(269, 153)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(46, 16)
         Me.Label1.TabIndex = 18
@@ -160,7 +168,7 @@ Partial Class TetrisGame
         '
         Me.GameBox.BackColor = System.Drawing.Color.DimGray
         Me.GameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.GameBox.Location = New System.Drawing.Point(12, 13)
+        Me.GameBox.Location = New System.Drawing.Point(61, 44)
         Me.GameBox.Name = "GameBox"
         Me.GameBox.Size = New System.Drawing.Size(200, 400)
         Me.GameBox.TabIndex = 31
@@ -168,12 +176,12 @@ Partial Class TetrisGame
         '
         'MessageLabel
         '
-        Me.MessageLabel.BackColor = System.Drawing.Color.Black
+        Me.MessageLabel.BackColor = System.Drawing.SystemColors.InactiveCaption
         Me.MessageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MessageLabel.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MessageLabel.ForeColor = System.Drawing.Color.Yellow
-        Me.MessageLabel.Location = New System.Drawing.Point(39, 100)
+        Me.MessageLabel.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.MessageLabel.Location = New System.Drawing.Point(88, 131)
         Me.MessageLabel.Name = "MessageLabel"
         Me.MessageLabel.Size = New System.Drawing.Size(139, 197)
         Me.MessageLabel.TabIndex = 32
@@ -183,7 +191,7 @@ Partial Class TetrisGame
         'PreviewBox
         '
         Me.PreviewBox.BackColor = System.Drawing.Color.Transparent
-        Me.PreviewBox.Location = New System.Drawing.Point(223, 39)
+        Me.PreviewBox.Location = New System.Drawing.Point(272, 70)
         Me.PreviewBox.Name = "PreviewBox"
         Me.PreviewBox.Size = New System.Drawing.Size(80, 80)
         Me.PreviewBox.TabIndex = 33
@@ -192,7 +200,8 @@ Partial Class TetrisGame
         'StylesLabel
         '
         Me.StylesLabel.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StylesLabel.Location = New System.Drawing.Point(220, 341)
+        Me.StylesLabel.ForeColor = System.Drawing.Color.White
+        Me.StylesLabel.Location = New System.Drawing.Point(269, 372)
         Me.StylesLabel.Name = "StylesLabel"
         Me.StylesLabel.Size = New System.Drawing.Size(200, 68)
         Me.StylesLabel.TabIndex = 35
@@ -203,7 +212,8 @@ Partial Class TetrisGame
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(220, 319)
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(269, 350)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 16)
         Me.Label7.TabIndex = 34
@@ -213,35 +223,44 @@ Partial Class TetrisGame
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(220, 13)
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(269, 44)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(39, 16)
         Me.Label6.TabIndex = 36
         Me.Label6.Text = "Next"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.MessageLabel)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.StylesLabel)
+        Me.Panel1.Controls.Add(Me.LevelLabel)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PreviewBox)
+        Me.Panel1.Controls.Add(Me.ScoreLabel)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.GameBox)
+        Me.Panel1.Controls.Add(Me.SpeedLabel)
+        Me.Panel1.Controls.Add(Me.HelpLabel)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.LinesLabel)
+        Me.Panel1.Location = New System.Drawing.Point(568, 29)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(523, 508)
+        Me.Panel1.TabIndex = 37
+        '
         'TetrisGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.ClientSize = New System.Drawing.Size(422, 430)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.StylesLabel)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.PreviewBox)
-        Me.Controls.Add(Me.MessageLabel)
-        Me.Controls.Add(Me.GameBox)
-        Me.Controls.Add(Me.HelpLabel)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.LinesLabel)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.SpeedLabel)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ScoreLabel)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.LevelLabel)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(1310, 738)
+        Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "TetrisGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -249,8 +268,9 @@ Partial Class TetrisGame
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.GameBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PreviewBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents HelpLabel As System.Windows.Forms.Label
@@ -270,4 +290,5 @@ Partial Class TetrisGame
     Friend WithEvents StylesLabel As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 End Class

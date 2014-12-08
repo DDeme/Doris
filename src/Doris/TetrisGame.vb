@@ -1,4 +1,4 @@
-﻿Option Strict On
+﻿'Option Strict On
 Imports WindowsApplication1.Tetris
 Imports WindowsApplication1.Tetris.TetrisBlock
 
@@ -22,8 +22,22 @@ Partial Class TetrisGame
         Stopped
     End Enum
 
+
+
+    
+    
 #Region "Event Handlers"
     Private Sub TetrisGame_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+
+        Dim scrwidth As Integer = Screen.PrimaryScreen.Bounds.Width
+        Dim scrheight As Integer = Screen.PrimaryScreen.Bounds.Height
+
+        Panel1.Location = New Point(CInt((scrwidth - Panel1.Width) / 2), CInt((scrheight - Panel1.Height) / 2))
+
+
+
+
         PreviewBoard = New TetrisBoard(PreviewBox)
         With PreviewBoard
             .Rows = 4
@@ -50,7 +64,23 @@ Partial Class TetrisGame
         StylesLabel.Text = StylesLabel.Text.Replace("|", vbCrLf)
         ShowMessage(String.Format("{0}W E L C O M E{0}{0}T O{0}{0}T E T R I S{0}{0}{0}{0}Click here to start new game", vbCrLf))
 
+
+
+
+
+
+
+
+
     End Sub
+
+
+
+   
+
+
+
+
 
     Private Sub TetrisGame_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
@@ -69,6 +99,19 @@ Partial Class TetrisGame
                         End Select
                     End With
                 End If
+
+            Case Keys.Escape
+                Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or _
+                    MsgBoxStyle.MsgBoxSetForeground
+
+                ' Display the message box and save the response, Yes or No. 
+                Dim response = MsgBox("Are you sure to quit ?", style, "")
+
+                ' Take some action based on the response. 
+                If response = MsgBoxResult.Yes Then
+                    End
+                End If
+
             Case Keys.P
                 If Status <> GameStatus.Stopped Then TogglePauseGame()
             Case Keys.N
@@ -154,7 +197,11 @@ Partial Class TetrisGame
             '' Check if game has ended
             If Not FallingBlock.CanMove(FallingBlock.CenterCell) Then EndGame()
         End If
+
     End Sub
+
+
+
 #End Region
 
 #Region "Private Methods"
@@ -217,5 +264,6 @@ Partial Class TetrisGame
         Timer1.Enabled = False
     End Sub
 #End Region
+
 
 End Class
