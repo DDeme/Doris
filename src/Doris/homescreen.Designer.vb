@@ -38,14 +38,15 @@ Partial Class homescreen
         '
         Me.Button2.BackColor = System.Drawing.Color.Transparent
         Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button2.FlatAppearance.BorderSize = 5
         Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(177, 257)
+        Me.Button2.Location = New System.Drawing.Point(138, 254)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(205, 60)
+        Me.Button2.Size = New System.Drawing.Size(259, 73)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "MULTI PLAYER"
         Me.Button2.UseVisualStyleBackColor = False
@@ -55,15 +56,16 @@ Partial Class homescreen
         Me.Button1.BackColor = System.Drawing.Color.Transparent
         Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button1.FlatAppearance.BorderSize = 5
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(177, 181)
+        Me.Button1.Location = New System.Drawing.Point(138, 163)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(205, 60)
+        Me.Button1.Size = New System.Drawing.Size(259, 73)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "SINGLE PLAYER"
         Me.Button1.UseVisualStyleBackColor = False
@@ -72,15 +74,16 @@ Partial Class homescreen
         '
         Me.Button3.BackColor = System.Drawing.Color.Transparent
         Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button3.FlatAppearance.BorderSize = 5
         Me.Button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
         Me.Button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(177, 332)
+        Me.Button3.Location = New System.Drawing.Point(138, 342)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(205, 60)
+        Me.Button3.Size = New System.Drawing.Size(259, 73)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "EXIT GAME"
         Me.Button3.UseVisualStyleBackColor = False
@@ -89,7 +92,7 @@ Partial Class homescreen
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
-        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PictureBox1.Image = Global.WindowsApplication1.My.Resources.Resources.logo
         Me.PictureBox1.InitialImage = Global.WindowsApplication1.My.Resources.Resources.logo
         Me.PictureBox1.Location = New System.Drawing.Point(0, 20)
@@ -105,12 +108,12 @@ Partial Class homescreen
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.Button3)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Location = New System.Drawing.Point(182, 52)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(549, 405)
+        Me.Panel1.Size = New System.Drawing.Size(549, 437)
         Me.Panel1.TabIndex = 5
         '
         'homescreen
@@ -118,7 +121,8 @@ Partial Class homescreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.PaleVioletRed
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.bg
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(948, 501)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

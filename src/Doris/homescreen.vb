@@ -2,6 +2,8 @@
 Imports WindowsApplication1.main
 Imports WindowsApplication1.main.doris
 
+'load for custom font 
+Imports System.Drawing.Text
 
 Public Class homescreen
 
@@ -43,6 +45,11 @@ Public Class homescreen
         Me.WindowState = FormWindowState.Maximized
         align(Panel1)
 
+        Dim customfont As PrivateFontCollection = New PrivateFontCollection
+        customfont.AddFontFile("C:\Pexico.ttf")
+        Button1.Font = New Font(customfont.Families(0), 10)
+        Button2.Font = New Font(customfont.Families(0), 10)
+        Button3.Font = New Font(customfont.Families(0), 10)
 
 
 
@@ -120,4 +127,10 @@ Public Class homescreen
 
 
 
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Dim webAddress As String = "http://www.doris.demecko.com/"
+        Process.Start(webAddress)
+    End Sub
+
+   
 End Class

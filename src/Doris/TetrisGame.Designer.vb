@@ -23,7 +23,6 @@ Partial Class TetrisGame
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(TetrisGame))
         Me.HelpLabel = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LinesLabel = New System.Windows.Forms.Label()
@@ -167,7 +166,7 @@ Partial Class TetrisGame
         '
         'GameBox
         '
-        Me.GameBox.BackColor = System.Drawing.Color.DimGray
+        Me.GameBox.BackColor = System.Drawing.Color.White
         Me.GameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.GameBox.Location = New System.Drawing.Point(61, 44)
         Me.GameBox.Name = "GameBox"
@@ -260,10 +259,11 @@ Partial Class TetrisGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
+        Me.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.bg
         Me.ClientSize = New System.Drawing.Size(1310, 738)
         Me.Controls.Add(Me.Panel1)
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "TetrisGame"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
