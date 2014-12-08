@@ -55,7 +55,7 @@ Public Class homescreen
 
 
         Me.Visible = True
-
+        My.Computer.Audio.Play(My.Resources.intro, AudioPlayMode.BackgroundLoop)
 
     End Sub
 
