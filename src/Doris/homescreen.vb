@@ -1,11 +1,14 @@
 ﻿
-Imports WindowsApplication1.main
-Imports WindowsApplication1.main.doris
+
+
 
 'load for custom font 
 Imports System.Drawing.Text
 
 Public Class homescreen
+    Dim main As New main
+    Dim audio As Boolean = False
+
 
 
     'Inherits Windows.Forms.Form
@@ -43,19 +46,21 @@ Public Class homescreen
 
 
         Me.WindowState = FormWindowState.Maximized
-        align(Panel1)
+        main.align(Panel1)
 
         Dim customfont As PrivateFontCollection = New PrivateFontCollection
         customfont.AddFontFile("C:\Pexico.ttf")
         Button1.Font = New Font(customfont.Families(0), 10)
         Button2.Font = New Font(customfont.Families(0), 10)
         Button3.Font = New Font(customfont.Families(0), 10)
+        Button5.Font = New Font(customfont.Families(0), 10)
 
 
-
+        My.Computer.Audio.Play(My.Resources.intro, AudioPlayMode.BackgroundLoop)
+        audio = True
 
         Me.Visible = True
-        My.Computer.Audio.Play(My.Resources.intro, AudioPlayMode.BackgroundLoop)
+
 
     End Sub
 
@@ -65,7 +70,7 @@ Public Class homescreen
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Visible = False
         'Dim newWindow As New singleplayer()
-        Dim newWindow As New TetrisGame()
+        Dim newWindow As New singleplayer()
         newWindow.ShowDialog()
     End Sub
 
@@ -114,15 +119,7 @@ Public Class homescreen
         Next
     End Sub
 
-    'zarovnáva elemnt do stredu obrazovky 
-    Public Sub align(element As Object)
-        Dim scrwidth As Integer = Screen.PrimaryScreen.Bounds.Width
-        Dim scrheight As Integer = Screen.PrimaryScreen.Bounds.Height
-
-
-        element.location = New Point((scrwidth - element.Width) / 2, (scrheight - element.Height) / 2)
-
-    End Sub
+    
 
 
 
@@ -133,4 +130,20 @@ Public Class homescreen
     End Sub
 
    
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
+        If audio Then
+
+            My.Computer.Audio.Stop()
+            audio = False
+            Button5.Text = "Sound off"
+
+        Else
+            My.Computer.Audio.Play(My.Resources.intro, AudioPlayMode.BackgroundLoop)
+            audio = True
+            Button5.Text = "Sound on"
+        End If
+
+
+
+    End Sub
 End Class

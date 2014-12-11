@@ -2,7 +2,7 @@
 Imports WindowsApplication1.Tetris
 Imports WindowsApplication1.Tetris.TetrisBlock
 
-Partial Class TetrisGame
+Partial Class singleplayer
     Private GameBoard As TetrisBoard
     Private FallingBlock As TetrisBlock
     Private PreviewBoard As TetrisBoard
@@ -24,8 +24,8 @@ Partial Class TetrisGame
 
 
 
-    
-    
+
+
 #Region "Event Handlers"
     Private Sub TetrisGame_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -76,7 +76,7 @@ Partial Class TetrisGame
 
 
 
-   
+
 
 
 
@@ -84,7 +84,7 @@ Partial Class TetrisGame
 
     Private Sub TetrisGame_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyCode
-            Case Keys.Left, Keys.Right, Keys.Down, Keys.Up
+            Case Keys.Left, Keys.Right, Keys.Down, Keys.Up, Keys.Space
                 If Status = GameStatus.Running Then
                     With FallingBlock
                         Select Case e.KeyCode
@@ -96,11 +96,20 @@ Partial Class TetrisGame
                                 If .CanMove(MoveDirection.Down) Then .Move(MoveDirection.Down)
                             Case Keys.Up
                                 If .CanRotate Then .Rotate()
+
+                            Case Keys.Space
+                                While .CanMove(MoveDirection.Down)
+                                    .Move(MoveDirection.Down)
+                                End While
+
+
                         End Select
                     End With
                 End If
 
             Case Keys.Escape
+
+                If Status <> GameStatus.Stopped Then TogglePauseGame()
                 Dim style = MsgBoxStyle.YesNo Or MsgBoxStyle.DefaultButton2 Or _
                     MsgBoxStyle.MsgBoxSetForeground
 

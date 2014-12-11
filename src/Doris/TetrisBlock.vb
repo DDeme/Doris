@@ -121,6 +121,10 @@ Namespace Tetris
             UpdateShape()
         End Sub
 
+
+       
+
+
         Public Function CanRotate() As Boolean
             Dim nextShape As Shapes = GetRotatedShape()
             For Each cell In GetShapeCells(nextShape, CenterCell)

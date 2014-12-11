@@ -22,28 +22,509 @@ Partial Class multiplayer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.components = New System.ComponentModel.Container()
+        Me.HelpLabel = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LinesLabel = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.SpeedLabel = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ScoreLabel = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LevelLabel = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.GameBox = New System.Windows.Forms.PictureBox()
+        Me.MessageLabel = New System.Windows.Forms.Label()
+        Me.PreviewBox = New System.Windows.Forms.PictureBox()
+        Me.StylesLabel = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.MessageLabel1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.StylesLabel1 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.PreviewBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.GameBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.HelpLabel1 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        CType(Me.GameBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PreviewBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        CType(Me.PreviewBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GameBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'HelpLabel
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(129, 23)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Back to main menu"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.HelpLabel.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpLabel.ForeColor = System.Drawing.Color.White
+        Me.HelpLabel.Location = New System.Drawing.Point(269, 272)
+        Me.HelpLabel.Name = "HelpLabel"
+        Me.HelpLabel.Size = New System.Drawing.Size(200, 65)
+        Me.HelpLabel.TabIndex = 28
+        Me.HelpLabel.Text = "Left   Move Left|Right  Move Right|Down   Move Down|Up     Rotate Block|N      Ne" & _
+    "w Game|P      Pause Game|B      Classic Brick Style|M      Molten Metal Style|"
         '
-        'singleplayer
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(269, 252)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(46, 16)
+        Me.Label2.TabIndex = 27
+        Me.Label2.Text = "Keys:"
+        '
+        'LinesLabel
+        '
+        Me.LinesLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinesLabel.ForeColor = System.Drawing.Color.White
+        Me.LinesLabel.Location = New System.Drawing.Point(403, 175)
+        Me.LinesLabel.Name = "LinesLabel"
+        Me.LinesLabel.Size = New System.Drawing.Size(33, 16)
+        Me.LinesLabel.TabIndex = 25
+        Me.LinesLabel.Text = "0"
+        Me.LinesLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(391, 153)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(45, 16)
+        Me.Label5.TabIndex = 24
+        Me.Label5.Text = "Lines"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'SpeedLabel
+        '
+        Me.SpeedLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SpeedLabel.ForeColor = System.Drawing.Color.White
+        Me.SpeedLabel.Location = New System.Drawing.Point(339, 175)
+        Me.SpeedLabel.Name = "SpeedLabel"
+        Me.SpeedLabel.Size = New System.Drawing.Size(33, 16)
+        Me.SpeedLabel.TabIndex = 23
+        Me.SpeedLabel.Text = "1"
+        Me.SpeedLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(326, 153)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(54, 16)
+        Me.Label4.TabIndex = 22
+        Me.Label4.Text = "Speed"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ScoreLabel
+        '
+        Me.ScoreLabel.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ScoreLabel.ForeColor = System.Drawing.Color.White
+        Me.ScoreLabel.Location = New System.Drawing.Point(354, 60)
+        Me.ScoreLabel.Name = "ScoreLabel"
+        Me.ScoreLabel.Size = New System.Drawing.Size(104, 26)
+        Me.ScoreLabel.TabIndex = 21
+        Me.ScoreLabel.Text = "000"
+        Me.ScoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(364, 44)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(85, 16)
+        Me.Label3.TabIndex = 20
+        Me.Label3.Text = "Your Score"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'LevelLabel
+        '
+        Me.LevelLabel.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LevelLabel.ForeColor = System.Drawing.Color.White
+        Me.LevelLabel.Location = New System.Drawing.Point(275, 175)
+        Me.LevelLabel.Name = "LevelLabel"
+        Me.LevelLabel.Size = New System.Drawing.Size(33, 16)
+        Me.LevelLabel.TabIndex = 19
+        Me.LevelLabel.Text = "1"
+        Me.LevelLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(269, 153)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 16)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Level"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'GameBox
+        '
+        Me.GameBox.BackColor = System.Drawing.Color.White
+        Me.GameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.GameBox.Location = New System.Drawing.Point(61, 44)
+        Me.GameBox.Name = "GameBox"
+        Me.GameBox.Size = New System.Drawing.Size(200, 400)
+        Me.GameBox.TabIndex = 31
+        Me.GameBox.TabStop = False
+        '
+        'MessageLabel
+        '
+        Me.MessageLabel.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.MessageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MessageLabel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MessageLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MessageLabel.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.MessageLabel.Location = New System.Drawing.Point(88, 131)
+        Me.MessageLabel.Name = "MessageLabel"
+        Me.MessageLabel.Size = New System.Drawing.Size(139, 197)
+        Me.MessageLabel.TabIndex = 32
+        Me.MessageLabel.Text = "WELCOME TO TETRIS"
+        Me.MessageLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PreviewBox
+        '
+        Me.PreviewBox.BackColor = System.Drawing.Color.Transparent
+        Me.PreviewBox.Location = New System.Drawing.Point(272, 70)
+        Me.PreviewBox.Name = "PreviewBox"
+        Me.PreviewBox.Size = New System.Drawing.Size(80, 80)
+        Me.PreviewBox.TabIndex = 33
+        Me.PreviewBox.TabStop = False
+        '
+        'StylesLabel
+        '
+        Me.StylesLabel.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StylesLabel.ForeColor = System.Drawing.Color.White
+        Me.StylesLabel.Location = New System.Drawing.Point(269, 372)
+        Me.StylesLabel.Name = "StylesLabel"
+        Me.StylesLabel.Size = New System.Drawing.Size(200, 68)
+        Me.StylesLabel.TabIndex = 35
+        Me.StylesLabel.Text = "B      Classic Bricks|M      Molten Metal|F      Fire|S      Sky|W      Water|C  " & _
+    "    Chocolate"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(269, 350)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(47, 16)
+        Me.Label7.TabIndex = 34
+        Me.Label7.Text = "Style:"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(269, 44)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(39, 16)
+        Me.Label6.TabIndex = 36
+        Me.Label6.Text = "Next"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.Transparent
+        Me.Panel1.Controls.Add(Me.MessageLabel1)
+        Me.Panel1.Controls.Add(Me.Label9)
+        Me.Panel1.Controls.Add(Me.Label10)
+        Me.Panel1.Controls.Add(Me.StylesLabel1)
+        Me.Panel1.Controls.Add(Me.Label12)
+        Me.Panel1.Controls.Add(Me.Label13)
+        Me.Panel1.Controls.Add(Me.Label14)
+        Me.Panel1.Controls.Add(Me.PreviewBox1)
+        Me.Panel1.Controls.Add(Me.Label15)
+        Me.Panel1.Controls.Add(Me.Label16)
+        Me.Panel1.Controls.Add(Me.GameBox1)
+        Me.Panel1.Controls.Add(Me.Label17)
+        Me.Panel1.Controls.Add(Me.HelpLabel1)
+        Me.Panel1.Controls.Add(Me.Label19)
+        Me.Panel1.Controls.Add(Me.Label20)
+        Me.Panel1.Controls.Add(Me.Label21)
+        Me.Panel1.Controls.Add(Me.MessageLabel)
+        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.StylesLabel)
+        Me.Panel1.Controls.Add(Me.LevelLabel)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.PreviewBox)
+        Me.Panel1.Controls.Add(Me.ScoreLabel)
+        Me.Panel1.Controls.Add(Me.Label4)
+        Me.Panel1.Controls.Add(Me.GameBox)
+        Me.Panel1.Controls.Add(Me.SpeedLabel)
+        Me.Panel1.Controls.Add(Me.HelpLabel)
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.LinesLabel)
+        Me.Panel1.Location = New System.Drawing.Point(35, 29)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1056, 508)
+        Me.Panel1.TabIndex = 37
+        '
+        'MessageLabel1
+        '
+        Me.MessageLabel1.BackColor = System.Drawing.SystemColors.InactiveCaption
+        Me.MessageLabel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.MessageLabel1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MessageLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MessageLabel1.ForeColor = System.Drawing.Color.PaleVioletRed
+        Me.MessageLabel1.Location = New System.Drawing.Point(606, 131)
+        Me.MessageLabel1.Name = "MessageLabel1"
+        Me.MessageLabel1.Size = New System.Drawing.Size(139, 197)
+        Me.MessageLabel1.TabIndex = 48
+        Me.MessageLabel1.Text = "WELCOME TO TETRIS"
+        Me.MessageLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(787, 44)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(39, 16)
+        Me.Label9.TabIndex = 52
+        Me.Label9.Text = "Next"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(787, 153)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(46, 16)
+        Me.Label10.TabIndex = 37
+        Me.Label10.Text = "Level"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'StylesLabel1
+        '
+        Me.StylesLabel1.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StylesLabel1.ForeColor = System.Drawing.Color.White
+        Me.StylesLabel1.Location = New System.Drawing.Point(787, 372)
+        Me.StylesLabel1.Name = "StylesLabel1"
+        Me.StylesLabel1.Size = New System.Drawing.Size(200, 68)
+        Me.StylesLabel1.TabIndex = 51
+        Me.StylesLabel1.Text = "B      Classic Bricks|M      Molten Metal|F      Fire|S      Sky|W      Water|C  " & _
+    "    Chocolate"
+        '
+        'Label12
+        '
+        Me.Label12.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(793, 175)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(33, 16)
+        Me.Label12.TabIndex = 38
+        Me.Label12.Text = "1"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(787, 350)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(47, 16)
+        Me.Label13.TabIndex = 50
+        Me.Label13.Text = "Style:"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(882, 44)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(85, 16)
+        Me.Label14.TabIndex = 39
+        Me.Label14.Text = "Your Score"
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PreviewBox1
+        '
+        Me.PreviewBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PreviewBox1.Location = New System.Drawing.Point(790, 70)
+        Me.PreviewBox1.Name = "PreviewBox1"
+        Me.PreviewBox1.Size = New System.Drawing.Size(80, 80)
+        Me.PreviewBox1.TabIndex = 49
+        Me.PreviewBox1.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.Font = New System.Drawing.Font("Courier New", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.White
+        Me.Label15.Location = New System.Drawing.Point(872, 60)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(104, 26)
+        Me.Label15.TabIndex = 40
+        Me.Label15.Text = "000"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Location = New System.Drawing.Point(844, 153)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(54, 16)
+        Me.Label16.TabIndex = 41
+        Me.Label16.Text = "Speed"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'GameBox1
+        '
+        Me.GameBox1.BackColor = System.Drawing.Color.White
+        Me.GameBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.GameBox1.Location = New System.Drawing.Point(579, 44)
+        Me.GameBox1.Name = "GameBox1"
+        Me.GameBox1.Size = New System.Drawing.Size(200, 400)
+        Me.GameBox1.TabIndex = 47
+        Me.GameBox1.TabStop = False
+        '
+        'Label17
+        '
+        Me.Label17.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.White
+        Me.Label17.Location = New System.Drawing.Point(857, 175)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(33, 16)
+        Me.Label17.TabIndex = 42
+        Me.Label17.Text = "1"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'HelpLabel1
+        '
+        Me.HelpLabel1.Font = New System.Drawing.Font("Lucida Console", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpLabel1.ForeColor = System.Drawing.Color.White
+        Me.HelpLabel1.Location = New System.Drawing.Point(787, 272)
+        Me.HelpLabel1.Name = "HelpLabel1"
+        Me.HelpLabel1.Size = New System.Drawing.Size(200, 65)
+        Me.HelpLabel1.TabIndex = 46
+        Me.HelpLabel1.Text = "Left   Move Left|Right  Move Right|Down   Move Down|Up     Rotate Block|N      Ne" & _
+    "w Game|P      Pause Game|B      Classic Brick Style|M      Molten Metal Style|"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.White
+        Me.Label19.Location = New System.Drawing.Point(909, 153)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(45, 16)
+        Me.Label19.TabIndex = 43
+        Me.Label19.Text = "Lines"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.White
+        Me.Label20.Location = New System.Drawing.Point(787, 252)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(46, 16)
+        Me.Label20.TabIndex = 45
+        Me.Label20.Text = "Keys:"
+        '
+        'Label21
+        '
+        Me.Label21.Font = New System.Drawing.Font("Impact", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(921, 175)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(33, 16)
+        Me.Label21.TabIndex = 44
+        Me.Label21.Text = "0"
+        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'multiplayer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
-        Me.Controls.Add(Me.Button1)
-        Me.Name = "singleplayer"
-        Me.Text = "singleplayer"
+        Me.BackColor = System.Drawing.Color.PaleVioletRed
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.bg
+        Me.ClientSize = New System.Drawing.Size(1310, 738)
+        Me.Controls.Add(Me.Panel1)
+        Me.ForeColor = System.Drawing.Color.White
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Name = "multiplayer"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "TetrisGame"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
+        CType(Me.GameBox, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PreviewBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        CType(Me.PreviewBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GameBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents HelpLabel As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents LinesLabel As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents SpeedLabel As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents ScoreLabel As System.Windows.Forms.Label
+    Friend WithEvents Timer1 As System.Windows.Forms.Timer
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents LevelLabel As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents GameBox As System.Windows.Forms.PictureBox
+    Friend WithEvents MessageLabel As System.Windows.Forms.Label
+    Friend WithEvents PreviewBox As System.Windows.Forms.PictureBox
+    Friend WithEvents StylesLabel As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents MessageLabel1 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents StylesLabel1 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents PreviewBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents GameBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents HelpLabel1 As System.Windows.Forms.Label
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
 End Class
