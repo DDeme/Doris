@@ -45,12 +45,13 @@ Partial Class homescreen
         Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(138, 254)
+        Me.Button2.Location = New System.Drawing.Point(138, 433)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(259, 73)
         Me.Button2.TabIndex = 2
         Me.Button2.Text = "MULTI PLAYER"
         Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2.Visible = False
         '
         'Button1
         '
@@ -82,7 +83,7 @@ Partial Class homescreen
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(138, 342)
+        Me.Button3.Location = New System.Drawing.Point(138, 261)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(259, 73)
         Me.Button3.TabIndex = 3
@@ -109,10 +110,10 @@ Partial Class homescreen
         '
         Me.Panel1.BackColor = System.Drawing.Color.Transparent
         Me.Panel1.Controls.Add(Me.Button5)
+        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Location = New System.Drawing.Point(182, 52)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(549, 530)
@@ -129,7 +130,7 @@ Partial Class homescreen
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(238, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(138, 432)
+        Me.Button5.Location = New System.Drawing.Point(138, 354)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(259, 73)
         Me.Button5.TabIndex = 7
